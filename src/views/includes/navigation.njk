@@ -1,0 +1,9 @@
+<ul>
+  {% for project in projects %}
+    <li>
+      <h2>{{ project.name }}</h2>
+      <p>{{ project.description }}</p>
+      <datetime>{{ project.dataename }}</datetime>
+    </li>
+  {% endfor %}
+</ul>
