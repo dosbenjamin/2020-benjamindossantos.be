@@ -1,10 +1,10 @@
-$fs-calc-mobile: calc(1px + 7vw); // stylelint-disable-line
+$fs-calc-mobile: 7vw; // stylelint-disable-line
 $fs-body-mobile: 1em;
 $fs-title: 1.333em;
 $fs-bigTitle: 1.777em;
 $fs-small: 0.75em;
 
-$regular-weight: 400;
+$wght-regular: 400;
 
 @mixin paragraph {
   margin: 0 0 16px 0;
@@ -17,13 +17,13 @@ html {
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk', sans-serif;
   text-rendering: optimizeLegibility; // stylelint-disable-line
-  color: $c-darkGrey;
   text-transform: uppercase; // stylelint-disable-line
-  font-weight: $regular-weight;
+  font-weight: $wght-regular;
+  color: $c-darkGrey;
 }
 
 p {
@@ -32,4 +32,5 @@ p {
 
 a {
   color: $c-darkGrey;
+  text-decoration: none;
 }
