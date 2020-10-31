@@ -1,9 +1,11 @@
-<ul>
-  {% for project in projects %}
-    <li>
-      <h2>{{ project.name }}</h2>
-      <p>{{ project.description }}</p>
-      <datetime>{{ project.dataename }}</datetime>
-    </li>
-  {% endfor %}
-</ul>
+<nav class="l-navigation"">
+  <ul class="projects">
+    {% for project in projects %}
+      <li class="projects__item">
+        <h2 class="o-title">{{ project.name }}</h2>
+        <p class="o-small">{{ project.description }}</p>
+        <span class="o-small">{{ project.date }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

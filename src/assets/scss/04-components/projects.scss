@@ -1,0 +1,18 @@
+.projects {
+
+  &__item {
+    text-align: right;
+
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    &::before {
+      display: none; // stylelint-disable-line
+    }
+  }
+
+  .o-small {
+    margin: 0 0 8px auto;
+  }
+}
