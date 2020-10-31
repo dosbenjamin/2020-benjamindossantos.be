@@ -1,0 +1,16 @@
+$m-font-size: 112.5%;
+$d-font-size: 225%;
+
+html {
+  font-size: $d-font-size;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: $c-darkGrey;
+  text-transform: uppercase;
+  line-height: 1;
+}

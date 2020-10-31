@@ -1,12 +1,7 @@
 $fonts: (
-  // 'Example Sans': (
-  //   'example-sans-400' 400,
-  //   'example-sans-900' 900
-  // ),
-  // 'Example Display': (
-  //   Add a comma at the end if there is only one variant.
-  //   'example-display' 400 normal swap ['ttf', 'otf'],
-  // )
+  'Space Grotesk': (
+    'space-grotesk-regular' 400,
+  )
 );
 
 @mixin font-face(
