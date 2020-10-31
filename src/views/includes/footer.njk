@@ -1,0 +1,10 @@
+<footer>
+  <ul class="c-socials">
+    {% for social in socials %}
+      <li class="c-socials__item">
+        <a class="o-small u-underline" href="{{ social.url }}">{{ social.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <p class="o-small u-m0">Design &&nbsp;development →&nbsp;Benjamin Dos&nbsp;Santos</p>
+</footer>
