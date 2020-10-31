@@ -1,0 +1,6 @@
+.o-text {
+  @include paragraph;
+
+  font-size: $fs-body-mobile;
+  font-weight: $regular-weight;
+}

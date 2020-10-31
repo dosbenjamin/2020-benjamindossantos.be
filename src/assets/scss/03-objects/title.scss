@@ -1,0 +1,11 @@
+.o-title {
+  font-size: $fs-title;
+  font-weight: $regular-weight;
+  margin: 0 0 8px 0;
+
+  &--big {
+    font-size: $fs-bigTitle;
+    margin: 0 0 16px 0;
+    max-width: 6em;
+  }
+}
