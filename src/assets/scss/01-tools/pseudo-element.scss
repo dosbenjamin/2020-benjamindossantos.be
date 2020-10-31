@@ -1,0 +1,5 @@
+@mixin pseudoElement {
+  content: '';
+  display: block;
+  position: absolute;
+}

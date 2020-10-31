@@ -1,3 +1,13 @@
 .u-underline {
-  text-decoration: underline;
+  position: relative;
+
+  &::after {
+    @include pseudoElement;
+
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: $c-darkGrey;
+  }
 }
