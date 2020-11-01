@@ -1,6 +1,8 @@
 $fs-calc-mobile: 7vmin; // stylelint-disable-line
 $fs-body-mobile: 1em;
-$fs-title: 1.333em;
+$fs-body-tablet: 200%;
+$fs-title-mobile: 1.333em;
+$fs-title-tablet: 10vw; // stylelint-disable-line
 $fs-bigTitle: 1.777em;
 $fs-small: 0.75em;
 
@@ -9,6 +11,10 @@ $wght-regular: 400;
 html {
   font-size: $fs-calc-mobile; // stylelint-disable-line
   line-height: 1;
+
+  @include media(m) {
+    font-size: $fs-body-tablet;
+  }
 }
 
 body {
@@ -21,16 +27,21 @@ body {
   color: $c-darkGrey;
 }
 
-p {
+@mixin paragraph {
+  max-width: 12em;
+  margin: $sp-s 0 0 0;
 
-  @mixin paragraph {
-    max-width: 12em;
-    margin: $sp-s 0 0 0;
-
-    &:first-child {
-      margin: 0;
-    }
+  @include media(m) {
+    max-width: 15em;
   }
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+p {
+  @include paragraph;
 }
 
 a {

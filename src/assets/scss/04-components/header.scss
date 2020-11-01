@@ -1,6 +1,10 @@
 .c-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 28em;
 
   &__content {
-    margin: $sp-s 0 0 0;
+    // max-width: 12em;
   }
 }
