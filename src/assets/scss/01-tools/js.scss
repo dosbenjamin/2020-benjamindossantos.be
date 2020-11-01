@@ -1,0 +1,6 @@
+@mixin js($element: &) {
+
+  @at-root .js #{$element} {
+    @content;
+  }
+}
