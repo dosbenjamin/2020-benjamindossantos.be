@@ -5,18 +5,28 @@ layout: base
 
 <div class="l-wrapper">
 
-  {% include 'header.njk' %}
+  <header class="l-section">
 
-  <main>
+    {% include 'header.njk' %}
+
+  </header>
+
+
+  <main class="l-section">
 
     {% block content %}
 
-      {% include 'navigation.njk' %}
+      {% include 'projects.njk' %}
 
     {% endblock %}
 
   </main>
 
-  {% include 'footer.njk' %}
+  <footer class="l-section">
+
+    {% include 'footer.njk' %}
+
+  </footer>
+
 
 </div>
