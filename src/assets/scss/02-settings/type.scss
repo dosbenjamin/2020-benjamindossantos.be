@@ -1,15 +1,10 @@
-$fs-calc-mobile: 7vw; // stylelint-disable-line
+$fs-calc-mobile: 7vmin; // stylelint-disable-line
 $fs-body-mobile: 1em;
 $fs-title: 1.333em;
 $fs-bigTitle: 1.777em;
 $fs-small: 0.75em;
 
 $wght-regular: 400;
-
-@mixin paragraph {
-  margin: 0 0 16px 0;
-  max-width: 12em;
-}
 
 html {
   font-size: $fs-calc-mobile; // stylelint-disable-line
@@ -27,7 +22,15 @@ body {
 }
 
 p {
-  @include paragraph;
+
+  @mixin paragraph {
+    max-width: 12em;
+    margin: $sp-s 0 0 0;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
 }
 
 a {

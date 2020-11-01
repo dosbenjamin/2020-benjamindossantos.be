@@ -1,0 +1,6 @@
+@each $spacing in $spacings {
+
+  .u-margin-#{nth($spacing, 2)} {
+    margin: nth($spacing, 1) 0 0 0;
+  }
+}

@@ -1,10 +1,11 @@
 .c-projects {
+  text-align: right;
 
   &__item {
-    text-align: right;
+    margin: $sp-l 0 0 0;
 
-    &:not(:last-child) {
-      margin-bottom: 48px;
+    &:first-child {
+      margin: 0;
     }
 
     &::before {
@@ -12,7 +13,7 @@
     }
   }
 
-  .o-small {
-    margin: 0 0 8px auto;
+  &__description {
+    margin: $sp-xs 0 0 0;
   }
 }
