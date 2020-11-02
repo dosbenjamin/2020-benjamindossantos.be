@@ -1,10 +1,14 @@
 .c-header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 28em;
+  height: 50vh;
 
-  &__content {
-    // max-width: 12em;
+  &__wrapper {
+    padding: $sp-s 0 0 0;
+  }
+
+  &__banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 28em;
   }
 }

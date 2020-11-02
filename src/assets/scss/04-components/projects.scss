@@ -1,15 +1,32 @@
 .c-projects {
   text-align: right;
+  padding: $sp-l 0 0 0;
+
+  @include media(m) {
+    padding: 0;
+  }
 
   &__item {
-    margin: $sp-l 0 0 0;
+    @include no-js {
+      margin: $sp-m 0 0 0;
+
+      @include media(m) {
+        margin: $sp-l 0 0 0;
+      }
+    }
+
+    @include js {
+      will-change: transform;
+      transform-origin: right bottom;
+      margin: $sp-xm 0 0 0;
+
+      @include media(l) {
+        margin: $sp-l 0 0 0;
+      }
+    }
 
     &:first-child {
       margin: 0;
-    }
-
-    &::before {
-      display: none; // stylelint-disable-line
     }
   }
 
@@ -18,5 +35,20 @@
     align-items: flex-end;
     flex-direction: column;
     margin: $sp-xs 0 0 0;
+
+    @include media(l) {
+      flex-direction: row;
+      justify-content: flex-end;
+      visibility: hidden;
+    }
+  }
+
+  .o-small {
+    margin: $sp-xs 0 0 0;
+
+    @include media(l) {
+      max-width: inherit;
+      margin: 0;
+    }
   }
 }
