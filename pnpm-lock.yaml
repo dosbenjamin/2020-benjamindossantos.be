@@ -1,6 +1,7 @@
 dependencies:
   '@babel/runtime-corejs3': 7.12.1
   sanitize.css: 12.0.1
+  smooth-scrollbar: 8.5.3
 devDependencies:
   '@11ty/eleventy': 0.11.1
   '@babel/core': 7.12.0
@@ -3315,7 +3316,6 @@ packages:
       integrity: sha512-lacdXOimsiD0QyNf9BC/mxivNJ/ybBGJXQFKzRekp1WTHoVUWsUHEn+2T8GJAzzIhyOuXA+gOxCVN3l+5PLPUA==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
-    dev: true
     requiresBuild: true
     resolution:
       integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
@@ -7176,6 +7176,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
+  /lodash-es/4.17.15:
+    dev: false
+    resolution:
+      integrity: sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
   /lodash.assign/4.2.0:
     dev: true
     resolution:
@@ -11073,6 +11077,14 @@ packages:
       node: '>=8.0.0'
     resolution:
       integrity: sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
+  /smooth-scrollbar/8.5.3:
+    dependencies:
+      core-js: 2.6.11
+      lodash-es: 4.17.15
+      tslib: 1.14.1
+    dev: false
+    resolution:
+      integrity: sha512-0cBr/pbwgdPXLukpvVzx3LtBxRURwitdEMCuzykp7urVPb7+Cx9UhIT6CtprENM9Ghulgn+I78YYTA9MRH380g==
   /snake-case/1.1.2:
     dependencies:
       sentence-case: 1.1.3
@@ -12361,6 +12373,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+  /tslib/1.14.1:
+    dev: false
+    resolution:
+      integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
   /tty-browserify/0.0.0:
     dev: true
     resolution:
@@ -13333,6 +13349,7 @@ specifiers:
   sass: ^1.26.11
   sass-loader: ^10.0.2
   sharp: ^0.26.1
+  smooth-scrollbar: ^8.5.3
   stylelint: ^13.7.2
   stylelint-a11y: ^1.2.3
   stylelint-config-standard: ^20.0.0

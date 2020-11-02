@@ -10,7 +10,7 @@ robots: index, follow
 
   {% include 'head.njk' %}
 
-  <body>
+  <body data-namespace="{{ namespace }}">
 
     {{ content | safe }}
 
