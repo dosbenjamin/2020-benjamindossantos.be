@@ -3,7 +3,7 @@ $fs-body-mobile: 1em;
 $fs-body-tablet: 200%;
 $fs-title-mobile: 1.333em;
 $fs-title-tablet: 10vw; // stylelint-disable-line
-$fs-bigTitle: 1.777em;
+$fs-big-title: 1.777em;
 $fs-small-mobile: 0.75em;
 
 $wght-regular: 400;
@@ -12,7 +12,7 @@ html {
   font-size: $fs-calc-mobile; // stylelint-disable-line
   line-height: 1;
 
-  @include media(m) {
+  @include mq(m) {
     font-size: $fs-body-tablet;
   }
 }
@@ -24,14 +24,14 @@ body {
   text-rendering: optimizeLegibility; // stylelint-disable-line
   text-transform: uppercase; // stylelint-disable-line
   font-weight: $wght-regular;
-  color: $c-darkGrey;
+  color: $c-dark-grey;
 }
 
 @mixin paragraph {
   max-width: 12em;
   margin: $sp-s 0 0 0;
 
-  @include media(m) {
+  @include mq(m) {
     max-width: 15em;
   }
 
@@ -45,6 +45,6 @@ p {
 }
 
 a {
-  color: $c-darkGrey;
+  color: $c-dark-grey;
   text-decoration: none;
 }

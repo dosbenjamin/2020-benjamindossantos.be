@@ -1,0 +1,9 @@
+.c-socials {
+
+  &__item {
+
+    &:not(:first-child) {
+      margin: $sp-xs 0 0 0;
+    }
+  }
+}

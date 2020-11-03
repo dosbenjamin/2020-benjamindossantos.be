@@ -1,11 +1,11 @@
-@mixin svg ($path, $largeSide, $ratio, $vertical: false) {
+@mixin svg ($path, $large-side, $ratio, $vertical: false) {
 
   @if $vertical {
-    width: $largeSide / $ratio;
-    height: $largeSide;
+    width: $large-side / $ratio;
+    height: $large-side;
   } @else {
-    width: $largeSide;
-    height: $largeSide * $ratio;
+    width: $large-side;
+    height: $large-side * $ratio;
   }
 
   &::before {

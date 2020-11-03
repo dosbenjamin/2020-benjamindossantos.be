@@ -2,31 +2,33 @@
   text-align: right;
   padding: $sp-l 0 0 0;
 
-  @include media(m) {
+  @include mq(m) {
     padding: 0;
   }
 
   &__item {
-    @include no-js {
-      margin: $sp-m 0 0 0;
-
-      @include media(m) {
-        margin: $sp-l 0 0 0;
-      }
-    }
 
     @include js {
       will-change: transform;
       transform-origin: right bottom;
-      margin: $sp-xm 0 0 0;
-
-      @include media(l) {
-        margin: $sp-l 0 0 0;
-      }
     }
 
-    &:first-child {
-      margin: 0;
+    &:not(:first-child) {
+      @include no-js {
+        margin: $sp-m 0 0 0;
+
+        @include mq(m) {
+          margin: $sp-l 0 0 0;
+        }
+      }
+
+      @include js {
+        margin: $sp-xm 0 0 0;
+
+        @include mq(l) {
+          margin: $sp-l 0 0 0;
+        }
+      }
     }
   }
 
@@ -36,7 +38,7 @@
     flex-direction: column;
     margin: $sp-xs 0 0 0;
 
-    @include media(l) {
+    @include mq(l) {
       flex-direction: row;
       justify-content: flex-end;
       visibility: hidden;
@@ -44,11 +46,17 @@
   }
 
   .o-small {
-    margin: $sp-xs 0 0 0;
 
-    @include media(l) {
+    @include mq(l) {
       max-width: inherit;
-      margin: 0;
+    }
+
+    &:last-child {
+      margin: $sp-xs 0 0 0;
+
+      @include mq(l) {
+        margin: 0;
+      }
     }
   }
 }
