@@ -158,7 +158,7 @@ const config = {
             {
               loader: 'postcss-loader',
               options: {
-                postcssOptions: { config: isProd, hideNothingWarning: true }
+                postcssOptions: { config: true, hideNothingWarning: true }
               }
             },
             SpritePlugin.cssLoader,

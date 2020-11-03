@@ -5,7 +5,6 @@ module.exports = {
   ],
   plugins: [
     'wildcard',
-    'babel-plugin-loop-optimizer',
     'array-includes',
     [
       'groundskeeper-willie',
