@@ -4,17 +4,17 @@ layout: base
 namespace: home
 ---
 
-<div class="l-wrapper">
+<div class="l-wrapper js-wrapper">
 
-    {% include 'header.njk' %}
+  {% include 'header.njk' %}
 
-    <main id="main">
-      <div class="l-container">
-        {% block content %}
-          {% include 'projects.njk' %}
-        {% endblock %}
-      </div>
-    </main>
+  <main id="main">
+    <div class="l-container">
+      {% block content %}
+        {% include 'projects.njk' %}
+      {% endblock %}
+    </div>
+  </main>
 
   {% include 'footer.njk' %}
 
