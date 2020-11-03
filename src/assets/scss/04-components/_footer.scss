@@ -1,7 +1,28 @@
 .c-footer {
-  margin: $sp-l 0 0 0;
 
   &__wrapper {
     padding: 0 0 $sp-s 0;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include mq(m) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__author {
+    margin: $sp-s 0 0 0;
+
+    @include mq(m) {
+      text-align: right;
+    }
+
+    .o-small {
+      width: 12em;
+    }
   }
 }
