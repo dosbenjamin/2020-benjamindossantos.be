@@ -3,7 +3,7 @@
     <div class="c-footer__wrapper">
       <ul class="c-socials">
         {% for social in socials %}
-          <li class="c-socials__item">
+          <li class="c-socials__item js-animation" data-animation="fade-in">
             <a class="o-small u-underline" href="{{ social.url }}" target="_blank">{{ social.name }}</a>
           </li>
         {% endfor %}

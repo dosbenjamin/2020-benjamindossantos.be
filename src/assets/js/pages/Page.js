@@ -1,7 +1,6 @@
 import { $, $$ } from '../utilities/domSelectors'
 import Scrollbar from 'smooth-scrollbar'
 import anime from 'animejs/lib/anime.es.js'
-// import perspective from '../components/perspectiveAnimation'
 
 export default class Page {
   constructor (name) {
@@ -10,21 +9,30 @@ export default class Page {
     this.$wrapper = $('.js-wrapper')
     this.$wrapper.style.height = `${this.sizes.height}px`
     this.Scroll = Scrollbar.init(this.$wrapper)
-    this.$toFadeIn = $$('.js-fade-in')
-    anime({
-      targets: this.$toFadeIn,
-      translateY: [50, 0],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: anime.stagger(100),
-      easing: 'cubicBezier(0, 0.55, 0.45, 1)'
+    this.$toFadeIn = $$('.js-animation')
+    this.observer = new IntersectionObserver(entries => { // eslint-disable-line
+      this.$visibles = entries.filter(entry => entry.isIntersecting).map(entry => entry.target)
+      anime({
+        targets: this.$visibles,
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        delay: anime.stagger(100),
+        easing: 'cubicBezier(0, 0.55, 0.45, 1)'
+      })
+      this.$visibles.forEach($item => this.observer.unobserve($item))
+    }, {
+      threshold: 0.1
     })
-    // window.addEventListener('mousemove', event => perspective(event, this.sizes, this.$wrapper))
+    this.$toFadeIn.forEach($item => this.observer.observe($item))
   }
 
   updateSizes () {
     this.sizes = { width: window.innerWidth, height: window.innerHeight }
     this.$wrapper.style.height = `${this.sizes.height}px`
-    // perspective(event, this.sizes, this.$wrapper)
+  }
+
+  animate ($item) {
+    console.log($item)
   }
 }

@@ -8,6 +8,17 @@
 
   &__item {
 
+    @include mq(l) {
+
+      &:hover,
+      &:focus {
+
+        .c-projects__description {
+          visibility: visible;
+        }
+      }
+    }
+
     @include js {
       will-change: transform;
       transform-origin: right bottom;
@@ -55,7 +66,7 @@
       margin: $sp-xs 0 0 0;
 
       @include mq(l) {
-        margin: 0;
+        margin: 0 $sp-m 0 $sp-m;
       }
     }
   }
