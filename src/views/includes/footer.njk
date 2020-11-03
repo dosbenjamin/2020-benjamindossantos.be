@@ -1,10 +1,14 @@
-<div class="c-footer">
-  <ul class="c-socials">
-    {% for social in socials %}
-      <li class="c-socials__item">
-        <a class="o-small u-underline" href="{{ social.url }}" target="_blank">{{ social.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  <p class="o-small">Design &&nbsp;development →&nbsp;Benjamin Dos&nbsp;Santos</p>
-</div>
+<footer class="c-footer">
+  <div class="l-container">
+    <div class="c-footer__wrapper">
+      <ul class="c-socials">
+        {% for social in socials %}
+          <li class="c-socials__item">
+            <a class="o-small u-underline" href="{{ social.url }}" target="_blank">{{ social.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="o-small">Design &&nbsp;development →&nbsp;Benjamin Dos&nbsp;Santos</p>
+    </div>
+  </div>
+</footer>
