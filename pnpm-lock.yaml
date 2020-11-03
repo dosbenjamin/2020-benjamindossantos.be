@@ -1,5 +1,6 @@
 dependencies:
   '@babel/runtime-corejs3': 7.12.1
+  animejs: 3.2.1
   sanitize.css: 12.0.1
   smooth-scrollbar: 8.5.3
 devDependencies:
@@ -1593,6 +1594,10 @@ packages:
       node: '>=0.4.2'
     resolution:
       integrity: sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
+  /animejs/3.2.1:
+    dev: false
+    resolution:
+      integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==
   /ansi-colors/4.1.1:
     dev: true
     engines:
@@ -13293,6 +13298,7 @@ specifiers:
   '@fullhuman/postcss-purgecss': ^3.0.0
   '@ianwalter/exclude-assets-plugin': ^1.0.0
   '@quasibit/eleventy-plugin-sitemap': ^2.0.3
+  animejs: ^3.2.1
   babel-loader: ^8.1.0
   babel-plugin-array-includes: ^2.0.3
   babel-plugin-closure-elimination: ^1.3.2

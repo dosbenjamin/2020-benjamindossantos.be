@@ -1,6 +1,17 @@
 .u-underline {
   position: relative;
 
+  @include mq(l) {
+
+    &:hover,
+    &:focus {
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
   &::after {
     @include pseudo-element;
 
@@ -9,5 +20,11 @@
     bottom: 0;
     left: 0;
     background-color: $c-dark-grey;
+
+    @include mq(l) {
+      transform: scaleX(0);
+      transform-origin: left center;
+      // transition: transform 150ms;
+    }
   }
 }
