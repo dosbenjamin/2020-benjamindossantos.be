@@ -251,6 +251,7 @@ const config = {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           ${isProd ? "{% preloadFonts '' %}" : ''}
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
+          <script>document.documentElement.className = 'js'</script>
           <script defer src="{{ '/assets/js/main.js' | getPath }}"></script>
           <title>{{ title }} ${APP_TITLE_DIVIDER} ${APP_TITLE}</title>
           <meta name="description" content="{{ description }}">

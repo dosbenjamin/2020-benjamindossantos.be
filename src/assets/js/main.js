@@ -6,7 +6,4 @@ const initializer = {
 
 const { namespace } = document.body.dataset
 
-window.addEventListener('DOMContentLoaded', () => {
-  initializer[namespace]()
-  document.documentElement.className = 'js'
-})
+window.addEventListener('DOMContentLoaded', initializer[namespace])
