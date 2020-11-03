@@ -1,3 +1,5 @@
+'use strict'
+
 const precache = '/offline'
 const pagesCache = 'pages'
 const assetsCache = 'assets'
@@ -110,6 +112,7 @@ self.addEventListener('fetch', event => {
   const { request } = event
   if (request.method !== 'GET') return
   if (request.referrerPolicy === 'unsafe-url') return
+  if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') return
   if (request.mode === 'navigate') event.respondWith(networkFirst(request, event))
   else event.respondWith(cacheFirst(request, event))
 })
