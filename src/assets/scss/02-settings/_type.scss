@@ -1,20 +1,14 @@
-$fs-calc-mobile: 7vmin; // stylelint-disable-line
-$fs-body-mobile: 1em;
-$fs-body-tablet: 200%;
-$fs-title-mobile: 1.333em;
-$fs-title-tablet: 10vw; // stylelint-disable-line
-$fs-big-title: 1.777em;
-$fs-small-mobile: 0.75em;
+$fs-calc: calc(100% + 1.85vmin);
+$fs-body: 1em;
+$fs-project-title: 10vw;
+$fs-main-title: 1.333em;
+$fs-small: 0.75em;
 
 $wght-regular: 400;
 
 html {
-  font-size: $fs-calc-mobile; // stylelint-disable-line
+  font-size: $fs-calc;
   line-height: 1;
-
-  @include mq(m) {
-    font-size: $fs-body-tablet;
-  }
 }
 
 body {
@@ -28,12 +22,8 @@ body {
 }
 
 @mixin paragraph {
-  max-width: 12em;
   margin: $sp-s 0 0 0;
-
-  @include mq(m) {
-    max-width: 15em;
-  }
+  max-width: 15em;
 
   &:first-child {
     margin: 0;

@@ -3,17 +3,13 @@
   line-height: 0.9;
 
   &--main {
-    font-size: $fs-big-title;
+    font-size: $fs-main-title;
     max-width: 6em;
     margin: 0 $sp-m 0 0;
   }
 
   &--project {
-    font-size: $fs-title-mobile;
+    font-size: $fs-project-title;
     margin: 0;
-
-    @include mq(m) {
-      font-size: $fs-title-tablet;
-    }
   }
 }

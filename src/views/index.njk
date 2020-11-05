@@ -1,21 +1,13 @@
 ---
-title: Benjamin Dos Santos
+title: Benjamin Dos Santos
 layout: base
 namespace: home
 ---
 
-<div class="l-wrapper js-wrapper">
-
-  {% include 'header.njk' %}
-
-  <main id="main">
-    <div class="l-container">
-      {% block content %}
-        {% include 'projects.njk' %}
-      {% endblock %}
-    </div>
-  </main>
-
-  {% include 'footer.njk' %}
-
-</div>
+<main id="main">
+  <div class="l-container">
+    {% block content %}
+      {% include 'projects.njk' %}
+    {% endblock %}
+  </div>
+</main>

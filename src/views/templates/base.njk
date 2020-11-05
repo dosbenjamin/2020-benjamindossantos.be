@@ -11,9 +11,15 @@ robots: index, follow
   {% include 'head.njk' %}
 
   <body data-namespace="{{ namespace }}">
+    <div class="l-wrapper js-wrapper">
 
-    {{ content | safe }}
+      {% include 'header.njk' %}
 
+      {{ content | safe }}
+
+      {% include 'footer.njk' %}
+
+    </div>
   </body>
 
 </html>

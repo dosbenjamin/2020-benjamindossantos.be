@@ -8,7 +8,7 @@
     }
 
     &:not(:first-child) {
-      margin: $sp-xs 0 0 0;
+      margin: $sp-s 0 0 0;
 
       @include mq(l) {
         margin: 0 0 0 $sp-m;

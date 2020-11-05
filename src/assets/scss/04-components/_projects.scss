@@ -1,73 +1,35 @@
 .c-projects {
   text-align: right;
-  padding: $sp-l 0 0 0;
+  padding: $sp-xl 0 0 0;
 
   @include mq(m) {
-    padding: 0;
+    padding: $sp-xxl 0 0 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: $wght-regular;
+    font-size: $fs-body;
+  }
+
+  &__list {
+    margin: $sp-m 0 0 0;
   }
 
   &__item {
 
-    @include mq(l) {
-
-      &:hover,
-      &:focus {
-
-        .c-projects__description {
-          visibility: visible;
-        }
-      }
-    }
-
-    @include js {
-      will-change: transform;
-      transform-origin: right bottom;
-    }
-
     &:not(:first-child) {
-      @include no-js {
-        margin: $sp-m 0 0 0;
+      margin: $sp-l 0 0 0;
 
-        @include mq(m) {
-          margin: $sp-l 0 0 0;
-        }
+      @include mq(m) {
+        margin: $sp-xl 0 0 0;
       }
-
-      @include js {
-        margin: $sp-xm 0 0 0;
-
-        @include mq(l) {
-          margin: $sp-l 0 0 0;
-        }
-      }
-    }
-  }
-
-  &__description {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    margin: $sp-xs 0 0 0;
-
-    @include mq(l) {
-      flex-direction: row;
-      justify-content: flex-end;
-      visibility: hidden;
     }
   }
 
   .o-small {
-
     @include mq(l) {
       max-width: inherit;
-    }
-
-    &:last-child {
-      margin: $sp-xs 0 0 0;
-
-      @include mq(l) {
-        margin: 0 $sp-m 0 $sp-m;
-      }
     }
   }
 }
