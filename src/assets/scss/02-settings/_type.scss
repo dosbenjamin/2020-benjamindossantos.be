@@ -1,14 +1,18 @@
-$fs-calc: calc(100% + 1.85vmin);
+$fs-calc: calc(100% + 1.85vmin); // stylelint-disable-line
 $fs-body: 1em;
-$fs-project-title: 10vw;
+$fs-project-title: 10vw; // stylelint-disable-line
 $fs-main-title: 1.333em;
 $fs-small: 0.75em;
 
 $wght-regular: 400;
 
 html {
-  font-size: $fs-calc;
   line-height: 1;
+  font-size: $fs-calc; // stylelint-disable-line
+
+  @supports not (font-size: #{$fs-calc}) { // stylelint-disable-line
+    font-size: $fs-body;
+  }
 }
 
 body {

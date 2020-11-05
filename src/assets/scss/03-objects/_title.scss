@@ -9,7 +9,11 @@
   }
 
   &--project {
-    font-size: $fs-project-title;
     margin: 0;
+    font-size: $fs-project-title;
+
+    @supports not (font-size: #{$fs-project-title}) { // stylelint-disable-line
+      font-size: $fs-main-title;
+    }
   }
 }
