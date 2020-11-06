@@ -1,3 +1,5 @@
+// TODO: Build two bundles, legacy and modern.
+
 import Home from './pages/Home'
 import Annex from './pages/Annex'
 

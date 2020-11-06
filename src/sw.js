@@ -1,3 +1,5 @@
+// TODO: Fix offline fallback.
+
 'use strict'
 
 const precache = '/offline'
