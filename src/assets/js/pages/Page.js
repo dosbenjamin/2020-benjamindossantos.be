@@ -1,6 +1,5 @@
 import { $, $$ } from '../utilities/domSelectors'
 import Scrollbar from 'smooth-scrollbar'
-import spanify from '../utilities/spanify'
 import observer from '../components/observer'
 
 export default class Page {
@@ -11,9 +10,8 @@ export default class Page {
     this.$wrapper.style.height = this.setPageHeight()
     this.scroll = Scrollbar.init(this.$wrapper)
     this.observer = observer
-    this.$spanified = Array.from($$('.js-spanify')).map(spanify)
     this.$toAnimate = $$('.js-animation')
-    // this.$toAnimate.forEach($element => this.observer.observe($element))
+    this.$toAnimate.forEach($element => this.observer.observe($element))
 
     window.addEventListener('resize', () => this.updateOnResize())
   }

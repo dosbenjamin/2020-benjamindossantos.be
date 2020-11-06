@@ -252,6 +252,16 @@ const config = {
 
   common: eleventyConfig => {
     eleventyConfig.setQuietMode(true)
+
+    eleventyConfig.addShortcode('spanify', (content, animation) => {
+      const spanify = (line, animation) => `<span>
+        <span class="js-animation" data-animation="${animation}">${line}</span>
+      </span>`
+      const lines = content.split(' ')
+      const spanTags = lines.map(line => spanify(line, animation))
+      return spanTags.join('')
+    })
+
     return {
       dir: {
         input: 'src/views',
