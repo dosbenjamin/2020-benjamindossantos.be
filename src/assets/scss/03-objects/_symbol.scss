@@ -1,0 +1,19 @@
+.o-symbol {
+  // .o-symbol
+}
+
+.o-symbol--before {
+  margin: 0 $sp-s 0 0;
+
+  &::before {
+    content: attr(data-symbol);
+  }
+}
+
+.o-symbol--after {
+  margin: 0 0 0 $sp-s;
+
+  &::after {
+    content: attr(data-symbol);
+  }
+}

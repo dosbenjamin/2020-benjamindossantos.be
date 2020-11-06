@@ -1,19 +1,19 @@
 .o-title {
   font-weight: $wght-regular;
   line-height: 0.9;
+}
 
-  &--main {
+.o-title--main {
+  font-size: $fs-main-title;
+  max-width: 6em;
+  margin: 0 $sp-m 0 0;
+}
+
+.o-title--project {
+  margin: 0;
+  font-size: $fs-project-title;
+
+  @supports not (font-size: #{$fs-project-title}) { // stylelint-disable-line
     font-size: $fs-main-title;
-    max-width: 6em;
-    margin: 0 $sp-m 0 0;
-  }
-
-  &--project {
-    margin: 0;
-    font-size: $fs-project-title;
-
-    @supports not (font-size: #{$fs-project-title}) { // stylelint-disable-line
-      font-size: $fs-main-title;
-    }
   }
 }

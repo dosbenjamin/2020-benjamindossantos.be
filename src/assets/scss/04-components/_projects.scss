@@ -5,41 +5,53 @@
   @include mq(m) {
     padding: $sp-xxl 0 0 0;
   }
+}
 
-  &__title {
-    margin: 0;
-    font-weight: $wght-regular;
-    font-size: $fs-body;
+.c-projects__title {
+  display: inline-flex;
+
+  @include mq(l) {
+    padding: 0 $sp-xs 0 0;
   }
+}
 
-  &__list {
-    margin: $sp-m 0 0 0;
-  }
+.c-projects__list {
+  margin: $sp-xm 0 0 0;
+}
 
-  &__item {
+.c-projects__item {
+  display: inline-block; // ?? Not sure
 
-    @include js {
-      transform-origin: right bottom;
-      will-change: transform;
-    }
+  &:not(:first-child) {
+    margin: $sp-l 0 0 0;
 
-    &:not(:first-child) {
-      margin: $sp-l 0 0 0;
-
-      @include mq(m) {
-        margin: $sp-xl 0 0 0;
-      }
-    }
-  }
-
-  &__description {
-    margin: $sp-s 0 0 0;
-  }
-
-  .o-small {
-    @include mq(l) {
-      margin: 0 $sp-m 0 0;
-      max-width: inherit;
+    @include mq(m) {
+      margin: $sp-xl 0 0 0;
     }
   }
 }
+
+/* purgecss start ignore */
+
+.c-projects__description {
+  margin: $sp-s 0 0 0;
+
+  .o-small {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @include mq(l) {
+      padding: 0 $sp-s 0 0;
+    }
+  }
+
+  [data-spanified] {
+
+    &:not(:first-child) {
+      margin: 0 0 0 $sp-xs;
+    }
+  }
+}
+
+/* purgecss end ignore */

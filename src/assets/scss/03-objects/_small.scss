@@ -1,5 +1,9 @@
 .o-small {
   font-size: $fs-small;
-  max-width: 17em;
   display: inline-block;
+  max-width: 17em;
+
+  @include mq(l) {
+    max-width: inherit;
+  }
 }

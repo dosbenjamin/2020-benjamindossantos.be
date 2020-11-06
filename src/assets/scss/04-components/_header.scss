@@ -1,19 +1,20 @@
 .c-header {
+  // .c-header
+}
 
-  &__wrapper {
-    padding: $sp-s 0 0 0;
-  }
+.c-header__wrapper {
+  padding: $sp-s 0 0 0;
+}
 
-  &__banner {
-    display: flex; // stylelint-disable-line
-    flex-wrap: wrap;
-  }
-
-  &__title {
-    margin: 0 0 $sp-s 0;
-  }
+.c-header__banner {
+  display: flex; // stylelint-disable-line
+  flex-wrap: wrap;
 
   .o-small {
     margin: $sp-m 0 0 0;
   }
+}
+
+.c-header__title {
+  margin: 0 0 $sp-s 0;
 }

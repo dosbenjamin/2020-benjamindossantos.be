@@ -4,21 +4,21 @@
   @include mq(m) {
     margin: $sp-xxl 0 0 0;
   }
+}
 
-  &__wrapper {
-    padding: 0 0 $sp-s 0;
-    display: flex; // stylelint-disable-line
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+.c-footer__wrapper {
+  padding: 0 0 $sp-s 0;
+  display: flex; // stylelint-disable-line
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  &__author {
-    margin: $sp-m 0 0 0;
-    max-width: 9.2em;
+.c-footer__author {
+  margin: $sp-m 0 0 0;
+  max-width: 9.2em;
 
-    @include mq(m) {
-      text-align: right;
-    }
+  @include mq(m) {
+    text-align: right;
   }
 }
