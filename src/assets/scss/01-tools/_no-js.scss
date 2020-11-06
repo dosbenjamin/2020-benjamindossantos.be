@@ -1,6 +1,0 @@
-@mixin no-js($element: &) {
-
-  @at-root .no-js #{$element} {
-    @content;
-  }
-}
