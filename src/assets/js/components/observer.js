@@ -1,20 +1,23 @@
+// TODO: Disconnect the observer when every elements has been animated.
+// !! Need Intersection Observer polyfill for older browsers.
+
 import animate from './animations/lazy'
-// import { $$ } from '../utilities/domSelectors'
 
 export default new IntersectionObserver((entries, observer) => { // eslint-disable-line
+  const $toAnimate = {}
+
   const $visibles = entries
     .filter(({ isIntersecting }) => isIntersecting)
     .map(({ target }) => target)
 
-  const $toTranslate = $visibles
-    .filter(({ dataset }) => dataset.animation === 'translate')
+  $visibles.forEach($element => {
+    const { animation } = $element.dataset
+    $toAnimate[animation]
+      ? $toAnimate[animation].push($element)
+      : $toAnimate[animation] = [$element]
+  })
 
-  const $toFadeIn = $visibles
-    .filter(({ dataset }) => dataset.animation === 'fade-in')
-
-  $toTranslate.forEach(({ parentElement }) => { parentElement.style.overflow = 'hidden' })
-  animate.translate($toTranslate)
-  animate.fadeIn($toFadeIn)
+  animate($toAnimate)
 
   $visibles.forEach($element => observer.unobserve($element))
 }, {
