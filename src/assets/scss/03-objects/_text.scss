@@ -1,6 +1,6 @@
 .o-text {
-  @include paragraph;
-
   font-size: $fs-body;
   font-weight: $wght-regular;
+
+  @include paragraph;
 }
