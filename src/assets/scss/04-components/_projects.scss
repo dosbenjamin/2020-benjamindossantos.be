@@ -18,6 +18,11 @@
 
   &__item {
 
+    @include js {
+      transform-origin: right bottom;
+      will-change: transform;
+    }
+
     &:not(:first-child) {
       margin: $sp-l 0 0 0;
 
@@ -27,8 +32,13 @@
     }
   }
 
+  &__description {
+    margin: $sp-s 0 0 0;
+  }
+
   .o-small {
     @include mq(l) {
+      margin: 0 $sp-m 0 0;
       max-width: inherit;
     }
   }
