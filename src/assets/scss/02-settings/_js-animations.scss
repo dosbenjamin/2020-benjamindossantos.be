@@ -1,0 +1,28 @@
+// TODO: Animation on h3 (Project ↓).
+// TODO: Animation on project description.
+// TODO: Animation on hover -> CSS.
+
+/* purgecss start ignore */
+
+@include js {
+
+  [data-animation] {
+    opacity: 0;
+  }
+
+  [data-animation='bigTranslate'] {
+    transform-origin: left top;
+    display: block;
+  }
+
+  [data-animation='smallTranslate'] {
+    display: block;
+  }
+
+  [data-spanified] {
+    overflow: hidden;
+    display: block;
+  }
+}
+
+/* purgecss end ignore */

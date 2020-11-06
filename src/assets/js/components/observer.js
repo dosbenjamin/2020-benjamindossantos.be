@@ -1,7 +1,7 @@
 // TODO: Disconnect the observer when every elements has been animated.
 // !! Need Intersection Observer polyfill for older browsers.
 
-import animate from './animations/lazy'
+import revealOnScroll from './animations/revealOnScroll'
 
 export default new IntersectionObserver((entries, observer) => { // eslint-disable-line
   const $toAnimate = {}
@@ -17,7 +17,7 @@ export default new IntersectionObserver((entries, observer) => { // eslint-disab
       : $toAnimate[animation] = [$element]
   })
 
-  animate($toAnimate)
+  revealOnScroll($toAnimate)
 
   $visibles.forEach($element => observer.unobserve($element))
 }, {

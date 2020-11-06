@@ -3,12 +3,12 @@
     <div class="c-footer__wrapper">
       <ul class="c-socials">
         {% for social in socials %}
-          <li class="c-socials__item js-animation" data-animation="fade-in">
+          <li class="c-socials__item js-animation" data-animation="fadeIn">
             <a class="o-small u-underline" href="{{ social.url }}" target="_blank">{{ social.name }}</a>
           </li>
         {% endfor %}
       </ul>
-      <div class="c-footer__author js-animation">
+      <div class="c-footer__author js-animation" data-animation="fadeIn">
         <p class="o-small">Design &&nbsp;development →&nbsp;Benjamin Dos&nbsp;Santos</p>
       </div>
     </div>

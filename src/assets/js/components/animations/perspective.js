@@ -1,3 +1,5 @@
+// ?? Keep or delete ?
+
 export default ({ clientX, clientY }, { width, height }, $wrapper) => {
   const AMOUNT = 0.1
   const calcX = number => number * AMOUNT
