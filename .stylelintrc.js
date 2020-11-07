@@ -42,7 +42,7 @@ module.exports = {
     'color-no-hex': true,
     'declaration-no-important': true,
     'selector-max-class': 3,
-    'selector-max-attribute': 1,
+    'selector-max-attribute': 2,
     'selector-max-combinators': 1,
     'selector-max-id': 0,
     'selector-max-pseudo-class': 2,
@@ -57,6 +57,6 @@ module.exports = {
     'a11y/no-outline-none': true,
     'a11y/no-display-none': true,
     'a11y/selector-pseudo-class-focus': true,
-    'plugin/no-low-performance-animation-properties': true
+    // 'plugin/no-low-performance-animation-properties': true
   }
 }

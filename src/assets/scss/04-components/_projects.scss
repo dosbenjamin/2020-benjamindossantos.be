@@ -53,7 +53,7 @@
 
     &:last-child {
 
-      [data-animation] {
+      [data-animation] { // stylelint-disable-line
 
         @include mq(':h') {
           transition-delay: 100ms;
@@ -70,10 +70,10 @@
   [data-animation='smallTranslate'] {
 
     @include mq(':h') {
-      transform: translateY(20px) translateZ(0) !important;
-      opacity: 0 !important;
+      transform: translateY(20px) translateZ(0) !important; // stylelint-disable-line
+      opacity: 0 !important; // stylelint-disable-line
       transition-property: transform, opacity;
-      transition-timing-function: cubicBezier(0, 0.55, 0.45, 1);
+      transition-timing-function: cubicBezier(0, 0.55, 0.45, 1); // stylelint-disable-line
       transition-duration: 500ms;
     }
   }
@@ -84,8 +84,8 @@
     [data-animation='smallTranslate'] {
 
       @include mq(':h') {
-        transform: translateY(0) translateZ(0) !important;
-        opacity: 1 !important;
+        transform: translateY(0) translateZ(0) !important; // stylelint-disable-line
+        opacity: 1 !important; // stylelint-disable-line
       }
     }
   }
