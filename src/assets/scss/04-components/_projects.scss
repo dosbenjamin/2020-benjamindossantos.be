@@ -20,7 +20,6 @@
 }
 
 .c-projects__item {
-  display: inline-block; // ?? Not sure
 
   &:not(:first-child) {
     margin: $sp-l 0 0 0;
@@ -34,7 +33,7 @@
 /* purgecss start ignore */
 
 .c-projects__description {
-  margin: $sp-s 0 0 0;
+  margin: $sp-xs 0 0 0;
 
   .o-small {
     display: inline-flex;
@@ -49,7 +48,7 @@
   [data-spanified] {
 
     &:not(:first-child) {
-      margin: 0 0 0 $sp-xs;
+      margin: 0 0 0 0.35em;
     }
   }
 }
