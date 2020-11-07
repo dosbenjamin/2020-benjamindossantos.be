@@ -50,7 +50,43 @@
     &:not(:first-child) {
       margin: 0 0 0 0.35em;
     }
+
+    &:last-child {
+
+      [data-animation] {
+
+        @include mq(':h') {
+          transition-delay: 100ms;
+        }
+      }
+    }
   }
 }
 
 /* purgecss end ignore */
+
+.c-projects__link {
+
+  [data-animation='smallTranslate'] {
+
+    @include mq(':h') {
+      transform: translateY(20px) translateZ(0) !important;
+      opacity: 0 !important;
+      transition-property: transform, opacity;
+      transition-timing-function: cubicBezier(0, 0.55, 0.45, 1);
+      transition-duration: 500ms;
+    }
+  }
+
+  &:focus,
+  &:hover {
+
+    [data-animation='smallTranslate'] {
+
+      @include mq(':h') {
+        transform: translateY(0) translateZ(0) !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
