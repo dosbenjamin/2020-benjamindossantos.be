@@ -7,12 +7,15 @@ export default class Page {
     this.name = name
     this.sizes = this.getSizes()
     this.$wrapper = $('.js-wrapper')
+    this.$links = $$('.js-link')
     this.$wrapper.style.height = this.setPageHeight()
     this.scroll = Scrollbar.init(this.$wrapper)
     this.observer = observer
     this.$toAnimate = $$('.js-animation')
     this.$toAnimate.forEach($element => this.observer.observe($element))
 
+    document.body.addEventListener('click', event => this.removeFocus(event))
+    this.$links.forEach($link => $link.addEventListener('focus', event => this.scrollToElement(event)))
     window.addEventListener('resize', () => this.updateOnResize())
   }
 
@@ -20,12 +23,16 @@ export default class Page {
     return { width: window.innerWidth, height: window.innerHeight }
   }
 
-  setPageHeight () {
-    return `${this.sizes.height}px`
-  }
+  setPageHeight () { return `${this.sizes.height}px` }
 
   updateOnResize () {
     this.sizes = this.getSizes()
     this.$wrapper.style.height = this.setPageHeight()
+  }
+
+  removeFocus ({ target: $element }) { $element.blur() }
+
+  scrollToElement ({ target: $element }) {
+    this.scroll.scrollIntoView($element)
   }
 }
