@@ -15,22 +15,26 @@ export default ({
   }).add({
     targets: $fadeIn,
     opacity: [0, 1],
-    translateY: ['1em', 0]
+    translateY: ['1em', 0],
+    translateZ: 0
   }).add({
     targets: $bigTranslate,
     delay: anime.stagger(100),
     opacity: [0, 1],
     translateY: ['75%', 0],
+    translateZ: 0,
     rotateZ: ['0.75deg', 0]
   }, '-=300').add({
     targets: $smallTranslate,
     opacity: [0, 1],
     translateY: [20, 0],
+    translateZ: 0,
     duration: 500
   }, '-=650').add({
     targets: $title,
     opacity: [0, 1],
     translateY: ['-0.25em', 0],
+    translateZ: 0,
     rotateZ: ['0.75deg', 0]
   }, '-=300')
 }

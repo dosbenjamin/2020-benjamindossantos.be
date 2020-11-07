@@ -1,5 +1,3 @@
-// TODO: Animation on h3 (Project ↓).
-// TODO: Animation on project description.
 // TODO: Animation on hover -> CSS.
 
 /* purgecss start ignore */
@@ -8,6 +6,7 @@
 
   [data-animation] {
     opacity: 0;
+    // will-change: transform;
   }
 
   [data-animation='bigTranslate'] {
@@ -22,6 +21,7 @@
   [data-spanified] {
     overflow: hidden;
     display: block;
+    line-height: 0.95;
   }
 }
 
