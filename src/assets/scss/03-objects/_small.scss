@@ -1,6 +1,5 @@
 .o-small {
   font-size: $fs-small;
-  display: inline-block;
   max-width: 17em;
 
   @include mq(l) {

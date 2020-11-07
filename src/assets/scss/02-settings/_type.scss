@@ -41,4 +41,10 @@ p {
 a {
   color: $c-dark-grey;
   text-decoration: none;
+  display: inline-block;
+
+  &:focus {
+    outline: 1px solid $c-dark-grey;
+    outline-offset: 0.25rem;
+  }
 }
