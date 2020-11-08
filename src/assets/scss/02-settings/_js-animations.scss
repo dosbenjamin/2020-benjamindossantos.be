@@ -3,10 +3,10 @@
 @include js {
 
   [data-animation] {
-    opacity: 0.1;
+    filter: opacity(0);
 
     @include mq(prm) {
-      opacity: 1;
+      filter: opacity(0);
     }
   }
 

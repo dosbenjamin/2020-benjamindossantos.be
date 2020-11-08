@@ -8,6 +8,9 @@ export default ({
   smallTranslate: $smallTranslate,
   title: $title
 }) => {
+  anime.set('[data-animation]', {
+    filter: 'opacity(100%)'
+  })
   anime.timeline({
     easing: 'cubicBezier(0, 0.55, 0.45, 1)',
     delay: anime.stagger(100, { start: 300 }),
