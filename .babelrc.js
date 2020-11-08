@@ -6,12 +6,12 @@ module.exports = {
   plugins: [
     'wildcard',
     'array-includes',
-    // [
-    //   'groundskeeper-willie',
-    //   { removeConsole: true, removeDebugger: true, removePragma: true }
-    // ],
+    [
+      'groundskeeper-willie',
+      { removeConsole: true, removeDebugger: true, removePragma: true }
+    ],
     ['@babel/plugin-transform-runtime', { 'corejs': 3 }],
-    // 'object-to-json-parse',
-    // 'closure-elimination',
+    'object-to-json-parse',
+    'closure-elimination',
   ]
 }
