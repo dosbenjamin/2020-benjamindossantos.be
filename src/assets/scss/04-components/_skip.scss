@@ -1,0 +1,18 @@
+// TODO: Clean component.
+
+.c-skip {
+  font-size: $fs-small;
+  position: absolute;
+  transform: translateX(-100%);
+  background-color: $c-dark-grey;
+  color: $c-light-grey;
+  padding: $sp-s;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &:focus {
+    transform: translateX(0);
+    outline-style: none;
+  }
+}
