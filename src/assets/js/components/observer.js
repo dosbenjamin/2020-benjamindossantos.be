@@ -15,6 +15,7 @@ export default new IntersectionObserver((entries, observer) => { // eslint-disab
     $toAnimate[animation]
       ? $toAnimate[animation].push($element)
       : $toAnimate[animation] = [$element]
+    $element.classList.remove('u-hidden')
   })
 
   revealOnScroll($toAnimate)

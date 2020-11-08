@@ -2,14 +2,6 @@
 
 @include js {
 
-  [data-animation] {
-    filter: opacity(0);
-
-    @include mq(prm) {
-      filter: opacity(0);
-    }
-  }
-
   [data-animation='bigTranslate'] {
     transform-origin: left top;
     display: block;

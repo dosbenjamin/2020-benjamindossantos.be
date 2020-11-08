@@ -9,7 +9,7 @@ export default ({
   title: $title
 }) => {
   anime.set('[data-animation]', {
-    filter: 'opacity(100%)'
+    translateZ: 0
   })
   anime.timeline({
     easing: 'cubicBezier(0, 0.55, 0.45, 1)',
@@ -18,17 +18,14 @@ export default ({
   }).add({
     targets: $fadeIn,
     opacity: [0, 1],
-    translateY: ['1em', 0],
-    translateZ: 0
+    translateY: ['1em', 0]
   }).add({
     targets: $bigTranslate,
     delay: anime.stagger(100),
     opacity: [0, 1],
     translateY: ['75%', 0],
-    translateZ: 0,
     rotateZ: [1, 0],
     changeBegin: ({ animatables }) => {
-      // TODO: Optimize loop to set the style once per link.
       animatables.forEach(({ target: $element }) => {
         const $parentLink = $element.closest('.js-link')
         $parentLink.style.pointerEvents = 'auto'
@@ -38,13 +35,11 @@ export default ({
     targets: $smallTranslate,
     opacity: [0, 1],
     translateY: [20, 0],
-    translateZ: 0,
     duration: 500
   }, '-=650').add({
     targets: $title,
     opacity: [0, 1],
     translateY: ['-0.25em', 0],
-    translateZ: 0,
     rotateZ: ['0.75deg', 0]
   }, '-=650')
 }

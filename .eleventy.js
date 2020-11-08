@@ -255,7 +255,7 @@ const config = {
 
     eleventyConfig.addShortcode('spanify', (content, animation) => {
       const spanify = (line, animation) => `<span data-spanified>
-        <span class="js-animation" data-animation="${animation}">${line}</span>
+        <span class="u-hidden js-animation" data-animation="${animation}">${line}</span>
       </span>`
       const lines = content.split(' ')
       const spanTags = lines.map(line => spanify(line, animation))
