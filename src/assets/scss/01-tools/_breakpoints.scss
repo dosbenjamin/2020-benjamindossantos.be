@@ -3,7 +3,9 @@
 $breakpoints: (
   'm': '(min-width: 45em)',
   'l': '(min-width: 55em)',
-  ':h': '(any-hover: hover), (-ms-high-contrast: none)'
+  'xl': '(min-width: 65em)',
+  ':h': '(any-hover: hover), (-ms-high-contrast: none)',
+  'prm': '(prefers-reduced-motion)'
 );
 
 @mixin mq($size) {

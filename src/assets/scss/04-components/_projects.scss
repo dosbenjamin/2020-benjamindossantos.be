@@ -55,8 +55,11 @@
 
       [data-animation] { // stylelint-disable-line
 
-        @include mq(':h') {
-          transition-delay: 100ms;
+        @include js {
+
+          @include mq(':h') {
+            transition-delay: 100ms;
+          }
         }
       }
     }
@@ -67,14 +70,31 @@
 
 .c-projects__link {
 
+  @include js {
+
+    @include mq(':h') {
+      pointer-events: none;
+
+      @include mq(prm) {
+        pointer-events: auto;
+      }
+    }
+  }
+
   [data-animation='smallTranslate'] {
 
     @include mq(':h') {
-      transform: translateY(20px) translateZ(0) !important; // stylelint-disable-line
       opacity: 0 !important; // stylelint-disable-line
-      transition-property: transform, opacity;
-      transition-timing-function: cubicBezier(0, 0.55, 0.45, 1); // stylelint-disable-line
-      transition-duration: 500ms;
+    }
+
+    @include js {
+
+      @include mq(':h') {
+        transform: translateY(20px) translateZ(0) !important; // stylelint-disable-line
+        transition-property: transform, opacity;
+        transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+        transition-duration: 500ms;
+      }
     }
   }
 
@@ -84,8 +104,14 @@
     [data-animation='smallTranslate'] {
 
       @include mq(':h') {
-        transform: translateY(0) translateZ(0) !important; // stylelint-disable-line
         opacity: 1 !important; // stylelint-disable-line
+      }
+
+      @include js {
+
+        @include mq(':h') {
+          transform: translateY(0) translateZ(0) !important; // stylelint-disable-line
+        }
       }
     }
   }

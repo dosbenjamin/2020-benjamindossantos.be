@@ -9,12 +9,15 @@
 .c-header__banner {
   display: flex; // stylelint-disable-line
   flex-wrap: wrap;
-
-  .o-small {
-    margin: $sp-m 0 0 0;
-  }
 }
 
 .c-header__title {
   margin: 0 0 $sp-s 0;
+}
+
+.c-header__description {
+
+  .o-small {
+    margin: $sp-m 0 0 0;
+  }
 }

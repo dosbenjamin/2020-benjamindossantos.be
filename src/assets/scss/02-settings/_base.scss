@@ -4,6 +4,18 @@ html {
 
 body {
   background-color: $c-light-grey;
+
+  @include no-js {
+    overflow-x: hidden;
+  }
+
+  @include js {
+    overflow: hidden;
+
+    @include mq(prm) {
+      overflow: auto;
+    }
+  }
 }
 
 ul {

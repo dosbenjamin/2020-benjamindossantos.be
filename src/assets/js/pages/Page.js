@@ -5,18 +5,10 @@ import observer from '../components/observer'
 export default class Page {
   constructor (name) {
     this.name = name
-    this.sizes = this.getSizes()
-    this.$wrapper = $('.js-wrapper')
-    this.$links = $$('.js-link')
-    this.$wrapper.style.height = this.setPageHeight()
-    this.scroll = Scrollbar.init(this.$wrapper)
-    this.observer = observer
-    this.$toAnimate = $$('.js-animation')
-    this.$toAnimate.forEach($element => this.observer.observe($element))
+    this.allowMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    this.allowMotion && this.addMotion()
 
     document.body.addEventListener('click', event => this.removeFocus(event))
-    this.$links.forEach($link => $link.addEventListener('focus', event => this.scrollToElement(event)))
-    window.addEventListener('resize', () => this.updateOnResize())
   }
 
   getSizes () {
@@ -32,7 +24,32 @@ export default class Page {
 
   removeFocus ({ target: $element }) { $element.blur() }
 
-  scrollToElement ({ target: $element }) {
+  scrollToElement ($element) {
     this.scroll.scrollIntoView($element)
+  }
+
+  scrollToHash () {
+    // TODO: Fix on `hashchange` event.
+    const { hash } = location
+    const $element = hash && $(hash)
+    $element && this.scrollToElement($element)
+  }
+
+  addMotion () {
+    this.sizes = this.getSizes()
+    this.$wrapper = $('.js-wrapper')
+    this.$wrapper.style.height = this.setPageHeight()
+    this.scroll = Scrollbar.init(this.$wrapper)
+    this.observer = observer
+    this.$toAnimate = $$('.js-animation')
+    this.$toAnimate.forEach($element => this.observer.observe($element))
+    this.$links = $$('.js-link')
+
+    // TODO: Clean this line -> function.
+    this.$links.forEach($link => $link.addEventListener('focus', ({ target: $element }) => this.scrollToElement($element)))
+
+    window.addEventListener('load', () => this.scrollToHash())
+    window.addEventListener('hashchange', () => this.scrollToHash())
+    window.addEventListener('resize', () => this.updateOnResize())
   }
 }

@@ -23,7 +23,14 @@ export default ({
     opacity: [0, 1],
     translateY: ['75%', 0],
     translateZ: 0,
-    rotateZ: ['0.75deg', 0]
+    rotateZ: [1, 0],
+    changeBegin: ({ animatables }) => {
+      // TODO: Optimize loop to set the style once per link.
+      animatables.forEach(({ target: $element }) => {
+        const $parentLink = $element.closest('.js-link')
+        $parentLink.style.pointerEvents = 'auto'
+      })
+    }
   }, '-=300').add({
     targets: $smallTranslate,
     opacity: [0, 1],
@@ -36,5 +43,5 @@ export default ({
     translateY: ['-0.25em', 0],
     translateZ: 0,
     rotateZ: ['0.75deg', 0]
-  }, '-=300')
+  }, '-=650')
 }
