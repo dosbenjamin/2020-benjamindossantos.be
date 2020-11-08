@@ -4,14 +4,14 @@
 
 .c-socials__item {
 
-  @include mq(l) {
+  @include mq(xl) {
     display: inline-block;
   }
 
   &:not(:first-child) {
     margin: $sp-s 0 0 0;
 
-    @include mq(l) {
+    @include mq(xl) {
       margin: 0 0 0 $sp-m;
     }
   }
