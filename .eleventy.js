@@ -222,7 +222,7 @@ const config = {
       const toHtml = font => `<link
         rel="preload" href="/assets/fonts/${font}"
         as="font" type="font/woff2"
-        crossorigin="anonymous">
+        crossorigin>
       </link>`
       try {
         const fonts = fs.readdirSync('public/assets/fonts')
