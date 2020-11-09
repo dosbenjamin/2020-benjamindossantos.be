@@ -170,7 +170,7 @@ const injectServerPush = () => {
   const css = '/assets/css/main.css'
   const cssPath = getAssetPath(css)
   const template = dedent`
-    /*
+    /
       Link: <${cssPath}>; rel=preload; as=style\n`
   appendToFile(template, '_headers')
 }
