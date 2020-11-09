@@ -28,7 +28,7 @@ export default ({
     rotateZ: [1, 0],
     changeBegin: ({ animatables }) => {
       animatables.forEach(({ target: $element }) => {
-        const $parentLink = $element.closest('.js-link')
+        const $parentLink = $element.closest('.js-project-link')
         $parentLink.style.pointerEvents = 'auto'
       })
     }

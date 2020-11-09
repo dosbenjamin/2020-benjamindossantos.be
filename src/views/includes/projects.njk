@@ -5,8 +5,8 @@
   </div>
   <div class="c-projects__list">
     {% for project in projects %}
-      <section class="c-projects__item js-project">
-        <a class="c-projects__link" href="{{ project.url }}" target="_blank">
+      <section class="c-projects__item">
+        <a class="c-projects__link js-project-link" href="{{ project.url }}" target="_blank">
           <h3 class="o-title o-title--project">{% spanify project.name, 'bigTranslate' %}</h3>
           <div class="c-projects__description">
             <p class="o-small">{% spanify project.description, 'smallTranslate' %}</p>
