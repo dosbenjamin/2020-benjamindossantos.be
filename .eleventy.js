@@ -169,10 +169,14 @@ const injectSitemap = () => {
 const injectServerPush = () => {
   const css = '/assets/css/main.css'
   const cssPath = getAssetPath(css)
-  const template = dedent`
-    /
-      Link: <${cssPath}>; rel=preload; as=style\n`
-  appendToFile(template, '_headers')
+  const template = dedent`\n<IfModule http2_module>
+      SetEnvIf Cookie "css-loaded=1" css-loaded
+      <filesMatch "\.([hH][tT][mM][lL]?)">
+          Header add Link "<${cssPath}>;rel=preload;as=style" env=!css-loaded
+          Header add Set-Cookie "css-loaded=1; Path=/; Secure; HttpOnly" env=!css-loaded
+      </filesMatch>
+  </IfModule>\n`
+  appendToFile(template, '.htaccess')
 }
 
 const config = {
