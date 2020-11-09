@@ -10,4 +10,4 @@ const initializer = {
 
 const { namespace } = document.body.dataset
 
-document.addEventListener('load', initializer[namespace])
+window.addEventListener('load', initializer[namespace])
