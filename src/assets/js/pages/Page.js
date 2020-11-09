@@ -1,55 +1,67 @@
 import { $, $$ } from '../utilities/domSelectors'
 import Scrollbar from 'smooth-scrollbar'
-import observer from '../components/observer'
+import Observer from '../components/observer'
+
+const reduceMotion = '(prefers-reduced-motion: reduce)'
 
 export default class Page {
   constructor (name) {
     this.name = name
-    this.allowMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    this.allowMotion = !window.matchMedia(reduceMotion).matches
     this.allowMotion && this.addMotion()
 
-    document.body.addEventListener('click', event => this.removeFocus(event))
+    document.addEventListener('click', () => this.removeFocus())
   }
 
   getSizes () {
     return { width: window.innerWidth, height: window.innerHeight }
   }
 
-  setPageHeight () { return `${this.sizes.height}px` }
+  setPageHeight () {
+    return `${this.sizes.height}px`
+  }
 
   updateOnResize () {
     this.sizes = this.getSizes()
     this.$wrapper.style.height = this.setPageHeight()
   }
 
-  removeFocus ({ target: $element }) { $element.blur() }
+  removeFocus () { document.activeElement.blur() }
 
   scrollToElement ($element) {
     this.scroll.scrollIntoView($element)
   }
 
-  scrollToHash () {
-    // TODO: Fix on `hashchange` event.
-    const { hash } = location
-    const $element = hash && $(hash)
-    $element && this.scrollToElement($element)
+  scrollToHash (event) {
+    const init = () => {
+      const { hash } = location
+      const $element = hash && $(hash)
+      $element && this.scroll.scrollTo(0, $element.offsetTop, 200)
+    }
+    (event === 'Load' || event === 'Enter') && init()
+  }
+
+  listenFocus (key) {
+    const $element = document.activeElement
+    key === 'Tab' && this.scrollToElement($element)
   }
 
   addMotion () {
     this.sizes = this.getSizes()
     this.$wrapper = $('.js-wrapper')
-    this.$wrapper.style.height = this.setPageHeight()
     this.scroll = Scrollbar.init(this.$wrapper)
-    this.observer = observer
+    this.$wrapper.style.height = this.setPageHeight()
+    this.observer = Observer
     this.$toAnimate = $$('.js-animation')
     this.$toAnimate.forEach($element => this.observer.observe($element))
-    this.$links = $$('.js-link')
+    this.scrollToHash('Load')
 
-    // TODO: Clean this line -> function.
-    this.$links.forEach($link => $link.addEventListener('focus', ({ target: $element }) => this.scrollToElement($element)))
-
-    window.addEventListener('load', () => this.scrollToHash())
-    window.addEventListener('hashchange', () => this.scrollToHash())
-    window.addEventListener('resize', () => this.updateOnResize())
+    // document.activeElement.focus({ preventScroll: true })
+    // document.addEventListener('focus', event => event.preventDefault())
+    document.addEventListener('resize', () => this.updateOnResize())
+    document.addEventListener('keyup', ({ key }) => {
+      this.scrollToHash(key)
+      this.listenFocus(key)
+    })
   }
 }
