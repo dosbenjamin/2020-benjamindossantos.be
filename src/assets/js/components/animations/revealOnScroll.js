@@ -6,7 +6,8 @@ export default ({
   fadeIn: $fadeIn,
   bigTranslate: $bigTranslate,
   smallTranslate: $smallTranslate,
-  title: $title
+  title: $title,
+  fadeInReverse: $fadeInReverse
 }) => {
   anime.set('[data-animation]', {
     translateZ: 0
@@ -41,5 +42,9 @@ export default ({
     opacity: [0, 1],
     translateY: ['-0.25em', 0],
     rotateZ: ['0.75deg', 0]
-  }, '-=650')
+  }, '-=650').add({
+    targets: $fadeInReverse,
+    opacity: [0, 1],
+    translateY: ['-0.5em', 0]
+  }, '-=850')
 }
