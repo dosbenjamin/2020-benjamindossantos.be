@@ -1,5 +1,3 @@
-// TODO: Optimize timeline.
-
 import anime from 'animejs/lib/anime.es.js'
 
 export default ({
@@ -15,7 +13,7 @@ export default ({
   anime.timeline({
     easing: 'cubicBezier(0, 0.55, 0.45, 1)',
     delay: anime.stagger(100, { start: 300 }),
-    duration: 750
+    duration: 500
   }).add({
     targets: $fadeIn,
     opacity: [0, 1],
@@ -23,6 +21,7 @@ export default ({
   }).add({
     targets: $bigTranslate,
     delay: anime.stagger(100),
+    duration: 1000,
     opacity: [0, 1],
     translateY: ['75%', 0],
     rotateZ: [1, 0],
@@ -34,9 +33,9 @@ export default ({
     }
   }, '-=300').add({
     targets: $smallTranslate,
+    duration: 500,
     opacity: [0, 1],
-    translateY: [20, 0],
-    duration: 500
+    translateY: [20, 0]
   }, '-=650').add({
     targets: $title,
     opacity: [0, 1],
@@ -45,6 +44,6 @@ export default ({
   }, '-=650').add({
     targets: $fadeInReverse,
     opacity: [0, 1],
-    translateY: ['-0.5em', 0]
+    translateY: ['-0.25em', 0]
   }, '-=850')
 }
