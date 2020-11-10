@@ -1,7 +1,3 @@
 .l-container {
   margin: 0 $sp-s;
-
-  @include mq(ie11) {
-    margin: 0 $sp-s 0 $sp-m;
-  }
 }
