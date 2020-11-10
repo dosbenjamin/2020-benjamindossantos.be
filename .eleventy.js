@@ -194,7 +194,7 @@ const config = {
     eleventyConfig.addNunjucksAsyncFilter('resize', resizeImage)
 
     eleventyConfig.addShortcode('headTags', (
-      title,
+      pageTitle,
       description,
       thumbnail,
       url,
