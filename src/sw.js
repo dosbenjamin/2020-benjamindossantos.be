@@ -92,7 +92,7 @@ const networkFirst = async (request, event) => {
   const response = await fetchRequest(request, event)
     .catch(() => matchRequest(request))
   if (response) return response
-  return matchRequest('/offline')
+  return matchRequest('/offline/')
 }
 
 /**
