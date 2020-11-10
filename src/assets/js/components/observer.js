@@ -1,6 +1,3 @@
-// TODO: Disconnect the observer when every elements has been animated.
-// !! Need Intersection Observer polyfill for older browsers.
-
 import revealOnScroll from './animations/revealOnScroll'
 
 export default new IntersectionObserver((entries, observer) => { // eslint-disable-line
