@@ -29,7 +29,7 @@ export default class Page {
   removeFocus () { document.activeElement.blur() }
 
   scrollToElement ($element) {
-    this.scroll.scrollIntoView($element)
+    this.scroll.scrollIntoView($element, { offsetTop: 50 })
   }
 
   scrollToHash (event) {
