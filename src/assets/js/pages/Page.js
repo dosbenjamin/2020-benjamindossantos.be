@@ -13,20 +13,12 @@ export default class Page {
     document.addEventListener('click', () => this.removeFocus())
   }
 
-  getSizes () {
-    return { width: window.innerWidth, height: window.innerHeight }
-  }
-
-  setPageHeight () {
-    return `${this.sizes.height}px`
-  }
-
-  updateOnResize () {
-    this.sizes = this.getSizes()
-    this.$wrapper.style.height = this.setPageHeight()
-  }
-
   removeFocus () { document.activeElement.blur() }
+
+  listenFocus (key) {
+    const $element = document.activeElement
+    key === 'Tab' && this.scrollToElement($element)
+  }
 
   scrollToElement ($element) {
     this.scroll.scrollIntoView($element, { offsetTop: 50 })
@@ -41,9 +33,17 @@ export default class Page {
     (event === 'Load' || event === 'Enter') && init()
   }
 
-  listenFocus (key) {
-    const $element = document.activeElement
-    key === 'Tab' && this.scrollToElement($element)
+  getSizes () {
+    return { width: window.innerWidth, height: window.innerHeight }
+  }
+
+  setPageHeight () {
+    return `${this.sizes.height}px`
+  }
+
+  updateOnResize () {
+    this.sizes = this.getSizes()
+    this.$wrapper.style.height = this.setPageHeight()
   }
 
   addMotion () {
