@@ -91,7 +91,7 @@ const config = {
       }),
       new InjectPlugin(() => {
         return `if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
+          window.addEventListener('load', function () {
             navigator.serviceWorker.register('/sw.js')
           })
         }`
