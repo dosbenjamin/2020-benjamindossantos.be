@@ -2,7 +2,7 @@
 
 'use strict'
 
-const precache = '/offline'
+const precache = '/offline/'
 const pagesCache = 'pages'
 const assetsCache = 'assets'
 
