@@ -6,7 +6,7 @@
   X-Content-Type-Options: nosniff
   Cache-Control: immutable
   Cache-Control: max-age=31536000
-  Content-Security-Policy: default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self';
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'dbdd747aaa65b477c166f23977c458e20075c976c8c6a18483a3fd76bda2b1e1'; img-src 'self'; style-src 'self'; font-src 'self'
 
 /*.html
   Cache-Control: max-age=0
