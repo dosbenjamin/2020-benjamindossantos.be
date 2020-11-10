@@ -56,9 +56,7 @@ export default class Page {
     this.$toAnimate.forEach($element => this.observer.observe($element))
     this.scrollToHash('Load')
 
-    // document.activeElement.focus({ preventScroll: true })
-    // document.addEventListener('focus', event => event.preventDefault())
-    document.addEventListener('resize', () => this.updateOnResize())
+    window.addEventListener('resize', () => this.updateOnResize())
     document.addEventListener('keyup', ({ key }) => {
       this.scrollToHash(key)
       this.listenFocus(key)
