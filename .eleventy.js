@@ -263,6 +263,7 @@ const config = {
     })
 
     eleventyConfig.addPassthroughCopy({ 'src/_headers': '_headers' })
+    eleventyConfig.addPassthroughCopy({ 'src/_redirects': '_redirects' })
 
     return {
       dir: {
