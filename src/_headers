@@ -6,7 +6,7 @@
   X-Content-Type-Options: nosniff
   Cache-Control: immutable
   Cache-Control: max-age=31536000
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'https://polyfill.io/v3/polyfill.min.js' 'sha256-aXAixduJggG+OONu+ZTUSSUUbGV4AROhVFtBUU3b0X0='; img-src 'self'; style-src 'self' 'sha256-2tmqUQz4XHnCf/FsD37KyOheoO1zwbDqUd/zUCFPqW0='; font-src 'self'; connect-src 'self'; manifest-src 'self'
+  # Content-Security-Policy: default-src 'none'; script-src 'self' 'https://polyfill.io/v3/polyfill.min.js' 'sha256-aXAixduJggG+OONu+ZTUSSUUbGV4AROhVFtBUU3b0X0='; img-src 'self'; style-src 'self' 'sha256-2tmqUQz4XHnCf/FsD37KyOheoO1zwbDqUd/zUCFPqW0='; font-src 'self'; connect-src 'self'; manifest-src 'self'
 
 /*.html
   Cache-Control: max-age=0
