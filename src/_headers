@@ -1,33 +1,3 @@
-/*.html
-  Cache-Control: max-age=0
-
-/*.css
-  Cache-Control: max-age=31536000
-
-/*.js
-  Cache-Control: max-age=31536000
-
-/*.mjs
-  Cache-Control: max-age=31536000
-
-/*.webmanifest
-  Cache-Control: max-age=31536000
-
-/*.woff
-  Cache-Control: max-age=31536000
-
-/*.woff2
-  Cache-Control: max-age=31536000
-
-/*.png
-  Cache-Control: max-age=31536000
-
-/*.webp
-  Cache-Control: max-age=31536000
-
-/*.svg
-  Cache-Control: max-age=31536000
-
 /*
   X-Frame-Options: DENY
   Permissions-Policy: accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none';  picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb 'none'; vr 'none'
