@@ -15,6 +15,7 @@
     "lint:js": "eslint src/**/*.js",
     "lint": "run-s lint:*",
     "build:webpack": "webpack",
+    "build:modern": "webpack --config webpack.modern.js",
     "build:eleventy": "eleventy",
     "build": "APP_ENV=production run-s clean build:* optimize:* --silent"
   },
