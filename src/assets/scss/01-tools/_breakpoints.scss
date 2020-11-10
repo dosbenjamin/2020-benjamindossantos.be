@@ -1,16 +1,17 @@
 @use 'sass:map';
 
 $breakpoints: (
-  'm': '(min-width: 45em)',
-  'l': '(min-width: 55em)',
-  'xl': '(min-width: 65em)',
+  'm': 'only screen and (min-width: 45em)',
+  'l': 'only screen and (min-width: 55em)',
+  'xl': 'only screen and (min-width: 65em)',
   ':h': '(any-hover: hover), (-ms-high-contrast: none)',
-  'prm': '(prefers-reduced-motion)'
+  'prm': '(prefers-reduced-motion)',
+  'ie11': 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)'
 );
 
 @mixin mq($size) {
 
-  @media only screen and #{map.get($breakpoints, $size)} {
+  @media #{map.get($breakpoints, $size)} {
     @content;
   }
 }

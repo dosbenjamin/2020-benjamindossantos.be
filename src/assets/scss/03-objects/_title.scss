@@ -7,11 +7,19 @@
   font-size: $fs-main-title;
   max-width: 6em;
   margin: 0 $sp-m 0 0;
+
+  @include mq(ie11) {
+    max-width: 7em;
+  }
 }
 
 .o-title--project {
   margin: 0;
   font-size: $fs-project-title;
+
+  @include mq(ie11) {
+    font-size: $fs-project-title-ie11;
+  }
 
   @supports not (font-size: #{$fs-project-title}) { // stylelint-disable-line
     font-size: $fs-main-title;

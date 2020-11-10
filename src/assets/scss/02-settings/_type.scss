@@ -1,6 +1,7 @@
 $fs-calc: calc(100% + 1.85vmin); // stylelint-disable-line
 $fs-body: 1em;
 $fs-project-title: 10vw; // stylelint-disable-line
+$fs-project-title-ie11: 9vw; // stylelint-disable-line
 $fs-main-title: 1.333em;
 $fs-small: 0.75em;
 
@@ -28,6 +29,10 @@ body {
 @mixin paragraph {
   margin: $sp-s 0 0 0;
   max-width: 15em;
+
+  @include mq(ie11) {
+    max-width: 17em;
+  }
 
   &:first-child {
     margin: 0;
