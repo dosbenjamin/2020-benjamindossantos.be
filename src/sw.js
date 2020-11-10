@@ -92,7 +92,7 @@ const networkFirst = async (request, event) => {
   const response = await fetchRequest(request, event)
     .catch(() => matchRequest(request))
   if (response) return response
-  return caches.match('/offline')
+  return matchRequest('/offline')
 }
 
 /**
@@ -114,7 +114,7 @@ self.addEventListener('fetch', event => {
   const { request } = event
   if (request.method !== 'GET') return
   if (request.referrerPolicy === 'unsafe-url') return
-  if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') return
+  // if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') return
   if (request.mode === 'navigate') event.respondWith(networkFirst(request, event))
   else event.respondWith(cacheFirst(request, event))
 })
