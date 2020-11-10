@@ -252,7 +252,7 @@ const config = {
           ${isProd ? "{% preloadFonts '' %}" : ''}
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
           <script>document.documentElement.className = 'js'</script>
-          <script defer nonce="dbdd747aaa65b477c166f23977c458e20075c976c8c6a18483a3fd76bda2b1e1" src="{{ '/assets/js/main.js' | getPath }}"></script>
+          <script defer src="{{ '/assets/js/main.js' | getPath }}"></script>
           <title>{{ title }} ${APP_TITLE_DIVIDER} ${APP_TITLE}</title>
           <meta name="description" content="{{ description }}">
           ${head[APP_ENV]}
