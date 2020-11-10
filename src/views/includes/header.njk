@@ -1,5 +1,7 @@
 <header class="c-header">
-  <a class="c-skip" href="#main">Skip to content</a>
+  {% if namespace !== 'annex' %}
+    <a class="c-skip" href="#main">Skip to content</a>
+  {% endif %}
   <div class="l-container">
     <div class="c-header__wrapper">
       <div class="c-header__banner">

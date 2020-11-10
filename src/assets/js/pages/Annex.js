@@ -1,5 +1,7 @@
 import Page from './Page'
 
-export default class Home extends Page {
-  constructor () { super('annex') }
+export default class Annex extends Page {
+  constructor () {
+    super('annex')
+  }
 }
