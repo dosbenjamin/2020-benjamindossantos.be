@@ -5,7 +5,6 @@ const reduceMotion = '(prefers-reduced-motion: reduce)'
 
 export default class Page {
   constructor (name) {
-    console.log(this)
     this.name = name
     this.allowMotion = !window.matchMedia(reduceMotion).matches
     this.allowMotion && this.addMotion()
