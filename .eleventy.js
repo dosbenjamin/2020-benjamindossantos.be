@@ -204,15 +204,15 @@ const config = {
       return dedent`<meta name="author" content="${APP_AUTHOR}">
       <meta name="robots" content="${robots}">
       <link rel="canonical" href="${APP_BASE_URL}${url}">
-      <meta property="og:title" content="${title} ${APP_TITLE_DIVIDER} ${APP_TITLE}">
+      <meta property="og:title" content="${pageTitle}">
       <meta property="og:description" content="${description}">
       <meta property="og:image" content="${APP_BASE_URL}${getAssetPath(thumbnail)}">
       <meta property="og:url" content="${APP_BASE_URL}${url}">
       <meta property="og:type" content="${type}">
-      <meta itemprop="name" content="${title} ${APP_TITLE_DIVIDER} ${APP_TITLE}">
+      <meta itemprop="name" content="${pageTitle}">
       <meta itemprop="description" content="${description}">
       <meta itemprop="image" content="${APP_BASE_URL}${getAssetPath(thumbnail)}">
-      <meta name="twitter:title" content="${title} ${APP_TITLE_DIVIDER} ${APP_TITLE}">
+      <meta name="twitter:title" content="${pageTitle}">
       <meta name="twitter:description" content="${description}">
       <meta name="twitter:image" content="${APP_BASE_URL}${getAssetPath(thumbnail)}">
       <meta name="twitter:card" content="summary_large_image">`

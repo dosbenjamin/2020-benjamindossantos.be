@@ -30,7 +30,7 @@ const {
 
 const head = {
   development: `<link rel="icon" href="/${APP_FAVICON}">`,
-  production: '{% headTags title, description, thumbnail, page.url, type, robots %}'
+  production: '{% headTags pageTitle, description, thumbnail, page.url, type, robots %}'
 }
 
 const filename = { development: '[name]', production: '[name].[contenthash:8]' }
@@ -254,7 +254,7 @@ const config = {
           <script>document.documentElement.className = 'js'</script>
           <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry"></script>
           <script defer src="{{ '/assets/js/main.js' | getPath }}"></script>
-          <title>{{ title }} ${APP_TITLE_DIVIDER} ${APP_TITLE}</title>
+          <title>{{ pageTitle }}</title>
           <meta name="description" content="{{ description }}">
           ${head[APP_ENV]}
         </head>`,
