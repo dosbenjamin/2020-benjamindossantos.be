@@ -262,6 +262,8 @@ const config = {
       return spanTags.join('')
     })
 
+    eleventyConfig.addPassthroughCopy({ 'src/_headers': '_headers' })
+
     return {
       dir: {
         input: 'src/views',
