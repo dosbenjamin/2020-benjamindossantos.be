@@ -81,8 +81,36 @@ const config = {
     module: {
       rules: [{
         test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: ['babel-loader']
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                modules: false,
+                useBuiltIns: false,
+                targets: {
+                  browsers: [
+                    '> 1%',
+                    'last 2 versions',
+                    'Firefox ESR'
+                  ]
+                }
+              }]
+            ],
+            plugins: [
+              'wildcard',
+              'array-includes',
+              [
+                'groundskeeper-willie',
+                { removeConsole: true, removeDebugger: true, removePragma: true }
+              ],
+              ['@babel/plugin-transform-runtime', { corejs: 3 }],
+              'object-to-json-parse',
+              'closure-elimination'
+            ]
+          }
+        }
       }]
     },
     plugins: [

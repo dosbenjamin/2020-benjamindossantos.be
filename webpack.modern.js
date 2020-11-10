@@ -43,6 +43,15 @@ module.exports = {
                 ]
               }
             }]
+          ],
+          plugins: [
+            'wildcard',
+            [
+              'groundskeeper-willie',
+              { removeConsole: true, removeDebugger: true, removePragma: true }
+            ],
+            'object-to-json-parse',
+            'closure-elimination'
           ]
         }
       }
