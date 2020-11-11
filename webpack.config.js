@@ -280,7 +280,7 @@ const config = {
           <link rel="dns-prefetch" href="https://polyfill.io/v3/" />
           ${isProd ? "{% preloadFonts '' %}" : ''}
           <link rel="preload" href="{{ '/assets/css/main.css' | getPath }}" as="style" />
-          <link rel="preload" href="{{ '/assets/js/main-es6.js' | getPath }}" as="script" />
+          <link rel="preload" href="{{ '/assets/js/main-es6.js' | getPath }}" as="script" crossorigin/>
           <script>document.documentElement.className = 'js'</script>
           <title>{{ pageTitle }}</title>
           <meta name="description" content="{{ description }}">
