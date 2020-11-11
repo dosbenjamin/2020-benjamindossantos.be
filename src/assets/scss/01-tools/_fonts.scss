@@ -41,7 +41,7 @@ $fonts: (
     $font-file: nth($font-variant, 1);
     $font-weight: nth($font-variant, 2);
     $font-style: normal;
-    $font-display: fallback;
+    $font-display: swap;
     $font-extensions: ['woff', 'woff2'];
 
     @if length($font-variant) == 3 {
