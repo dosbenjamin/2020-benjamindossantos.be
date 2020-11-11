@@ -287,8 +287,8 @@ const config = {
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
           <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest"></script>
           ${!isProd ? '<script defer src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
-          ${isProd ? '<script type="module" src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
-          ${isProd ? '<script defer nomodule src="{{ \'/assets/js/main-es6.js\' | getPath }}"></script>' : ''}
+          ${isProd ? '<script type="module" src="{{ \'/assets/js/main-es6.js\' | getPath }}"></script>' : ''}
+          ${isProd ? '<script defer nomodule src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
         </head>`,
         filename: path.resolve('src/views/includes/head.njk'),
         minify: false,
