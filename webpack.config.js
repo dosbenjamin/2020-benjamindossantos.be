@@ -276,17 +276,17 @@ const config = {
         templateContent: dedent`<head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="preconnect" href="https://polyfill.io/v3/" />
-          <link rel="dns-prefetch" href="https://polyfill.io/v3/" />
+          ${isProd ? '<link rel="preconnect" href="https://polyfill.io/v3/" />' : ''}
+          ${isProd ? '<link rel="dns-prefetch" href="https://polyfill.io/v3/" />' : ''}
           ${isProd ? "{% preloadFonts '' %}" : ''}
           ${isProd ? '<link rel="preload" href="{{ \'/assets/css/main.css\' | getPath }}" as="style" />' : ''}
           ${isProd ? '<link rel="preload" href="{{ \'/assets/js/main-es6.js\' | getPath }}" as="script" crossorigin/>' : ''}
           <script>document.documentElement.className = 'js'</script>
-          <title>{{ pageTitle }}</title>
+          <title>{{ pageTitle | safe }}</title>
           <meta name="description" content="{{ description }}">
           ${head[APP_ENV]}
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
-          <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest"></script>
+          ${isProd ? '<script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest"></script>' : ''}
           ${!isProd ? '<script defer src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
           ${isProd ? '<script type="module" src="{{ \'/assets/js/main-es6.js\' | getPath }}"></script>' : ''}
           ${isProd ? '<script defer nomodule src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
