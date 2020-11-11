@@ -9,14 +9,14 @@ module.exports = {
   stats: { all: false, warnings: true, errors: true },
   output: {
     path: path.resolve('public'),
-    filename: 'assets/js/[name].[contenthash:8].mjs'
+    filename: 'assets/js/[name].[contenthash:8].js'
   },
   optimization: {
     usedExports: true,
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        test: /\.m?js(\?.*)?$/i,
+        test: /\.js(\?.*)?$/i,
         cache: true,
         parallel: true,
         terserOptions: { output: { comments: false } }
@@ -61,7 +61,7 @@ module.exports = {
   plugins: [
     new InjectPlugin(() => {
       return `if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
+        window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js')
         })
       }`

@@ -280,8 +280,9 @@ const config = {
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
           <script>document.documentElement.className = 'js'</script>
           <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest"></script>
-          <script defer nomodule src="{{ '/assets/js/main.js' | getPath }}"></script>
-          <script type="module" src="{{ '/assets/js/main.mjs' | getPath }}"></script>
+          ${!isProd ? '<script defer src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
+          ${isProd ? '<script type="module" src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
+          ${isProd ? '<script defer nomodule src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
           <title>{{ pageTitle }}</title>
           <meta name="description" content="{{ description }}">
           ${head[APP_ENV]}
