@@ -21,4 +21,8 @@
   @include mq(m) {
     text-align: right;
   }
+
+  @include mq(ie11) {
+    max-width: 10em;
+  }
 }
