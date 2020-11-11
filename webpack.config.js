@@ -277,7 +277,10 @@ const config = {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           ${isProd ? "{% preloadFonts '' %}" : ''}
+          <link rel="preload" href="{{ '/assets/css/main.css' }}" as="style" />
           <link href="{{ '/assets/css/main.css' | getPath }}" rel="stylesheet">
+          <link rel="preconnect" href="https://polyfill.io/v3/" />
+          <link rel="dns-prefetch" href="https://polyfill.io/v3/" />
           <script>document.documentElement.className = 'js'</script>
           <script defer src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest"></script>
           ${!isProd ? '<script defer src="{{ \'/assets/js/main.js\' | getPath }}"></script>' : ''}
