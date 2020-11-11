@@ -20,7 +20,7 @@ export default ({
     translateY: ['1em', 0]
   }).add({
     targets: $bigTranslate,
-    delay: anime.stagger(100),
+    delay: anime.stagger(150),
     duration: 1000,
     opacity: [0, 1],
     translateY: ['75%', 0],
@@ -41,9 +41,9 @@ export default ({
     opacity: [0, 1],
     translateY: ['-0.25em', 0],
     rotateZ: ['0.75deg', 0]
-  }, '-=650').add({
+  }, '-=1000').add({
     targets: $fadeInReverse,
     opacity: [0, 1],
     translateY: ['-0.25em', 0]
-  }, '-=850')
+  }, '-=1000')
 }
