@@ -9,7 +9,7 @@ module.exports = {
   stats: { all: false, warnings: true, errors: true },
   output: {
     path: path.resolve('public'),
-    filename: 'assets/js/[name].[contenthash:8].js'
+    filename: 'assets/js/[name]-es6.[contenthash:8].js'
   },
   optimization: {
     usedExports: true,
