@@ -276,10 +276,11 @@ const config = {
         templateContent: dedent`<head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          ${isProd ? "{% preloadFonts '' %}" : ''}
-          <link rel="preload" href="{{ '/assets/css/main.css' | getPath }}" as="style" />
           <link rel="preconnect" href="https://polyfill.io/v3/" />
           <link rel="dns-prefetch" href="https://polyfill.io/v3/" />
+          ${isProd ? "{% preloadFonts '' %}" : ''}
+          <link rel="preload" href="{{ '/assets/css/main.css' | getPath }}" as="style" />
+          <link rel="preload" href="{{ '/assets/js/main-es6.js' | getPath }}" as="script" />
           <script>document.documentElement.className = 'js'</script>
           <title>{{ pageTitle }}</title>
           <meta name="description" content="{{ description }}">
