@@ -501,4 +501,3 @@ $RECYCLE.BIN/
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/node,sass,macos,windows,linux,vscode,visualstudiocode,yarn,sublimetext,jetbrains,phpstorm,webstorm,git
-src/views/includes/head.njk
