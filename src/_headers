@@ -1,12 +1,7 @@
-/*.html
-	Cache-Control: max-age=0
-
 /*
   Permissions-Policy: accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none';  picture-in-picture 'none'; speaker 'none'; sync-xhr 'none'; usb 'none'; vr 'none'
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
-  Cache-Control: max-age=31536000
-  Cache-Control: immutable
 # Content-Security-Policy: default-src 'none'; script-src 'self' 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest' 'sha256-aXAixduJggG+OONu+ZTUSSUUbGV4AROhVFtBUU3b0X0='; img-src 'self'; style-src 'self' 'sha256-2tmqUQz4XHnCf/FsD37KyOheoO1zwbDqUd/zUCFPqW0='; font-src 'self'; connect-src 'self'; manifest-src 'self'
 
 /*.js
