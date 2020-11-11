@@ -14,10 +14,10 @@ $fonts: (
 ) {
 
   @font-face { // stylelint-disable-line
+    display: $font-display;
     font-family: $font-family;
     font-weight: $font-weight;
     font-style: $font-style;
-    display: $font-display;
 
     @each $font-extensions in $font-extensions {
       $font-format: $font-extensions;
