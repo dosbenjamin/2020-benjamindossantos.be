@@ -28,7 +28,7 @@ body {
 
 @mixin paragraph {
   margin: $sp-s 0 0 0;
-  max-width: 15em;
+  max-width: 14em;
 
   @include mq(ie11) {
     max-width: 17em;

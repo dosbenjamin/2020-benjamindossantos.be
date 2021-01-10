@@ -10,7 +10,7 @@
         </div>
         <div class="c-header__description">
           <h2 class="o-text u-hidden js-animation" data-animation="fadeIn">{{ header.subtitle }}</h2>
-            <p class="u-hidden js-animation" data-animation="fadeIn">{{ header.content }}</p>
+            <p class="u-hidden js-animation" data-animation="fadeIn">{{ header.content | safe }}</p>
           {% if header.link %}
             <a class="o-small u-underline u-hidden js-animation" data-animation="fadeIn" href="{{ header.link.url }}">{{ header.link.display }}</a>
           {% endif %}
